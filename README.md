@@ -21,6 +21,18 @@ AWS RDS (MySQL)  todo_db.todos
 | `server/` | `TodoController` REST API, JPA 엔티티 `Todo`(생성 시각 자동 기록) |
 | DB | AWS RDS MySQL. 접속 정보는 환경변수(`DB_URL`, `DB_USERNAME`, `DB_PASSWORD`)로 주입 |
 
+## 동작 화면
+
+앱에서 추가한 할 일이 서버를 거쳐 RDS의 `todo_db.todos` 테이블에 저장된다.
+
+| 앱 (에뮬레이터) | RDS 조회 (MySQL Workbench) |
+|:---:|:---:|
+| <img src="docs/app.png" width="190"> | <img src="docs/db.png" width="560"> |
+
+Spring Boot 서버가 RDS에 연결(HikariPool)하고 8080 포트로 요청을 받는 화면:
+
+<img src="docs/server.png" width="760">
+
 ## 실행
 
 ```bash
